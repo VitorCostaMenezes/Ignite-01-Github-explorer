@@ -1,0 +1,95 @@
+para iniciar o projeto
+    yarn init -y
+
+
+incializando o React
+    yarn add react
+
+incializando o react dom
+    yarn add react-dom
+
+criar uma pasta public --> criar um arquivo index.html --> inicializar um arquivo html
+
+criar uma pasta src
+
+
+instalando o babel como dependencia de desenvolvimento
+    yarn add @babel/core @babel/cli @babel/preset-env -D
+    criar na raiz um arquivo --> babel.config.js
+    incluir codigo abaixo no arquivo criado
+        module.exports = {
+            presets: [
+                '@babel/preset-env'
+            ]
+        }
+
+criar um arquivo index.src
+após setar ibnformações no arquivo index.js na pasta src
+    executar  codigo abaixo 
+        yarn babel src/index.js --out-file dist/bundle.js
+
+
+instalar a dependencia abaixo para o react entender o codigo html dentro do javascript
+    yarn add @babel/preset-react -D
+
+
+CONFIGURANDO O WEBPACK
+
+    instalando o WEBPACK
+        yarn add webpack webpack-cli -D
+
+    Criar um arquivo --> webpack.config.js
+    colar o conteudo abaixo:
+
+        const path = require('path')
+
+        module.exports= {
+            entry: path.resolve(__dirname, 'src', 'index.jsx'),
+            output: {
+                path: path.resolve(__dirname, 'dist'),
+                filename: 'bundle.js'
+            },
+            resolve: {
+                extensions: ['.js', '.jsx'],
+            },
+            module: {
+                rules: [
+                    {
+                        test: /\.jsx$/,
+                        exclude: /node_modules/,
+                        use: 'babel-loader'
+                    }
+                ],
+            }
+        };
+
+
+
+    instalar 
+        yarn add babel-loader -D
+
+    criar um arquivo App.jsx na pasta src
+
+    executar:
+        yarn webpack
+
+
+Instalar a dependencia abaixo para não rpecisar colocar o script de caminho no html
+    yarn add html-webpack-plugin -D
+
+
+instalar a funcionalidade de server:
+    yarn add webpack-dev-server -D
+
+para criar variaveis ambiente indpeendente do sistema operacional
+    yarn add cross-env -D
+
+
+instalar dependencias para utilizar o cross
+    yarn add style-loader css-loader -D
+
+
+
+Instalando o SASS
+    yarn add node-sass -D
+    yarn add sass-loader -D
