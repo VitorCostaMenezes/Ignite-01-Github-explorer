@@ -93,3 +93,7 @@ instalar dependencias para utilizar o cross
 Instalando o SASS
     yarn add node-sass -D
     yarn add sass-loader -D
+
+
+FAST REFRESH
+    yarn add -D @pmmmwh/react-refresh-webpack-plugin react-refresh
