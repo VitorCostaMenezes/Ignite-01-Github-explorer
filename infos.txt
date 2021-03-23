@@ -97,3 +97,14 @@ Instalando o SASS
 
 FAST REFRESH
     yarn add -D @pmmmwh/react-refresh-webpack-plugin react-refresh
+
+
+instalando o typescript 
+    yarn add typescript -D
+
+    yarn tsc --init
+
+
+para o babel compreender o typescript 
+    yarn add @babel/preset-typescript -D
+
